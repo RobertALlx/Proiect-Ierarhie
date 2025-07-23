@@ -1,0 +1,35 @@
+import { test, expect,chromium  } from '@playwright/test';
+test.setTimeout(120_000); 
+test('Test Case Validation: Validating elements', async () => {
+  const browser = await chromium.launch({ headless: false, slowMo: 1000 });
+  const context = await browser.newContext();
+  const page = await context.newPage();
+  await page.goto('https://automationexercise.com/');
+  await page.getByRole('button', { name: 'Consent' }).click();
+  await expect(page.getByRole('heading', { name: 'Subscription' })).toBeVisible();
+  await expect(page.getByRole('textbox', { name: 'Your email address' })).toBeVisible();
+  await page.getByRole('textbox', { name: 'Your email address' }).click();
+  await page.getByRole('textbox', { name: 'Your email address' }).fill('robi12@gmail.com');
+  await page.getByRole('button', { name: '' }).click();
+  await page.getByRole('textbox', { name: 'Your email address' }).click();
+  await page.getByRole('textbox', { name: 'Your email address' }).fill('rob@gmail.com');
+  await page.getByRole('button', { name: '' }).click();
+  await expect(page.getByText('You have been successfully')).toBeVisible();
+  await expect(page.getByRole('link', { name: ' Contact us' })).toBeVisible();
+  await page.getByRole('link', { name: ' Contact us' }).click();
+  await page.getByRole('textbox', { name: 'Name' }).click();
+  await page.getByRole('textbox', { name: 'Name' }).fill('rarr');
+  await page.getByRole('textbox', { name: 'Email', exact: true }).click();
+  await page.getByRole('textbox', { name: 'Email', exact: true }).fill('robi12@gmail.com');
+  await page.getByRole('textbox', { name: 'Subject' }).click();
+  await page.getByRole('textbox', { name: 'Subject' }).fill('1234');
+  await page.getByRole('textbox', { name: 'Your Message Here' }).click();
+  await page.getByRole('textbox', { name: 'Your Message Here' }).fill('5678');
+  page.once('dialog', dialog => {
+    console.log(`Dialog message: ${dialog.message()}`);
+    dialog.dismiss().catch(() => {});
+  });
+  await page.getByRole('button', { name: 'Submit' }).click();
+  await expect(page.locator('#contact-page').getByText('Success! Your details have')).toBeVisible();
+  await expect(page.locator('#contact-page')).toContainText('Success! Your details have been submitted successfully.');
+});

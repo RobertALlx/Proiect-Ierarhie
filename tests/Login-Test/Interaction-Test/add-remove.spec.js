@@ -1,0 +1,27 @@
+import { test, expect,chromium  } from '@playwright/test';
+test.setTimeout(120_000); 
+test('Test Case Add-Remove:Testing add and remove products from cart', async () => {
+  const browser = await chromium.launch({ headless: false, slowMo: 1000 });
+  const context = await browser.newContext();
+  const page = await context.newPage();
+  await page.goto('https://automationexercise.com/');
+  await page.getByRole('button', { name: 'Consent' }).click();
+  await expect(page.locator('body')).toContainText('Features Items');
+  await expect(page.locator('body')).toContainText('Rs. 500 Blue Top Add to cart Rs. 500 Blue Top Add to cart View Product');
+  await page.locator('.overlay-content > .btn').first().click();
+  await page.getByRole('button', { name: 'Continue Shopping' }).click();
+  await expect(page.locator('body')).toContainText('Rs. 400 Men Tshirt Add to cart Rs. 400 Men Tshirt Add to cart View Product');
+  await page.locator('div:nth-child(4) > .product-image-wrapper > .single-products > .product-overlay > .overlay-content > .btn').click();
+  await page.getByRole('button', { name: 'Continue Shopping' }).click();
+  await expect(page.locator('body')).toContainText('Rs. 1000 Sleeveless Dress Add to cart Rs. 1000 Sleeveless Dress Add to cart View Product');
+  await page.locator('div:nth-child(5) > .product-image-wrapper > .single-products > .product-overlay > .overlay-content > .btn').click();
+  await expect(page.locator('#cartModal')).toContainText(' Added! Your product has been added to cart. View Cart Continue Shopping');
+  await page.getByRole('link', { name: 'View Cart' }).click();
+  await expect(page.getByRole('row', { name: 'Product Image Blue Top Women' })).toBeVisible();
+  await expect(page.getByRole('row', { name: 'Product Image Men Tshirt Men' })).toBeVisible();
+  await expect(page.getByRole('row', { name: 'Product Image Sleeveless' })).toBeVisible();
+  await page.locator('#product-1').getByRole('cell', { name: '' }).locator('a').click();
+  await page.locator('#product-2').getByRole('cell', { name: '' }).locator('a').click();
+  await page.getByRole('cell', { name: '' }).locator('a').click();
+  await expect(page.locator('#empty_cart')).toContainText('Cart is empty! Click here to buy products.');
+});
