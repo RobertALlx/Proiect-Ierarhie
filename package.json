@@ -8,8 +8,23 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@playwright/test": "^1.54.1"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "playwright": "^1.54.1",
+    "playwright-core": "^1.54.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobertALlx/Proiect-Ierarhie.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RobertALlx/Proiect-Ierarhie/issues"
+  },
+  "homepage": "https://github.com/RobertALlx/Proiect-Ierarhie#readme",
+  "description": ""
 }
