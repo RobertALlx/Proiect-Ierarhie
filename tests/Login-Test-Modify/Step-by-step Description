@@ -1,0 +1,64 @@
+Launch the browser
+The Chromium browser is started with:
+
+headless: false → browser UI is visible
+
+slowMo: 1000 → each action is slowed by 1 second for better visibility
+
+Generate a unique email
+Uses JavaScript’s Date.now() to ensure each registration uses a new email like:
+
+Go to the login page
+Navigates to the /login route of the site.
+
+Handle cookie consent (if visible)
+Clicks on a consent button (if present) to accept cookies or tracking.
+
+Try invalid login
+
+Enters a known email: robittest@gmail.com
+
+Fills in an incorrect password: wrongpass
+
+Expects to see the error: Your email or password is incorrect!
+
+Start new user registration
+
+Enters name and the generated unique email
+
+Clicks "Signup" to begin the account creation process
+
+Fill out the signup form
+
+Selects gender (Mr.)
+
+Enters password
+
+Sets date of birth (1 Jan 2021)
+
+Checks newsletter and offers subscriptions
+
+Completes name, address, and phone number details
+
+Waits for the ZIP code field to be visible before filling it
+
+Submit the registration
+
+Clicks "Create Account"
+
+Waits for confirmation text: Account Created!
+
+Clicks "Continue" to proceed
+
+Log out
+Logs out of the newly created account using the Logout button
+
+Log back in using the new account
+
+Goes again to the login page
+
+Enters the same generated email and password
+
+Expects to see confirmation: Logged in as robi (verifies user is logged in)
+
+Close the browser manually
