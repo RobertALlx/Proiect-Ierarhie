@@ -1,0 +1,41 @@
+Browser initialization
+The Chromium browser is manually launched in non-headless mode (headless: false) so you can see the UI, with slowMo: 1000 to slow down each action by 1 second.
+
+Navigate to the homepage
+The test opens the URL https://automationexercise.com/.
+
+Accept cookie consent
+If a cookie consent button appears, it clicks on it to avoid blocking navigation due to cookie policies.
+
+Wait for full page load
+The script waits until network activity is idle (networkidle) to ensure the page is fully loaded.
+
+Hide ads and iframes
+Executes a script inside the page context to hide elements that could interfere with interactions, such as iframes and Google ads.
+
+Verify main content presence
+Checks that the text “Features Items” is present on the page, confirming that the homepage loaded correctly.
+
+Helper function to add products to the cart
+A helper function takes the product’s index, performs a hover over the product to reveal the “Add to cart” button, then clicks the button to add the product to the cart. If it’s not the last product, it closes the popup by clicking the “Continue Shopping” button.
+
+Add three products
+Adds these products one by one: “Blue Top,” “Men Tshirt,” and “Sleeveless Dress.”
+
+Verify confirmation modal
+After adding the last product, it checks that the confirmation modal shows the message “Added! Your product has been added to cart.”
+
+Navigate to the cart page
+Clicks the “View Cart” link to view the cart contents.
+
+Verify products in the cart
+Confirms that all three added products are visible in the cart table.
+
+Remove products from the cart
+Removes products one by one by clicking the delete (“”) buttons in each product row, waiting one second after each removal for the interface to update.
+
+Verify empty cart
+After removing all products, checks that the message “Cart is empty! Click here to buy products.” is displayed, confirming the cart is empty.
+
+Close the browser
+Closes the browser manually at the end of the test.
