@@ -1,0 +1,76 @@
+1. Homepage Load and Basic Verifications
+Navigates to https://demoqa.com.
+
+Verifies essential elements on the homepage: banner, home banner container, and text blocks for navigation categories like "Elements", "Forms", etc.
+
+2. Navigate to "Alerts, Frame & Windows"
+Clicks on the “Alerts, Frame & Windows” heading.
+
+Verifies that the page transitions successfully.
+
+3. Navigate to "Widgets" and Validate List
+Opens the "Widgets" section from the sidebar.
+
+Asserts the presence of various widgets like:
+
+Accordian, Auto Complete, Date Picker, Slider, etc.
+
+Uses regex to ensure the "Menu" entry is uniquely matched.
+
+Confirms that "Select Menu" is also visible.
+
+4. Interact with the "Slider" Component
+Clicks on Slider.
+
+Fills the slider input with the value 30.
+
+Verifies visibility of the slider and page title.
+
+5. Navigate to "Interactions" and Verify Subsections
+Opens the Interactions section.
+
+Verifies that each item in the list appears:
+
+Sortable, Selectable, Resizable, Droppable, Dragabble.
+
+6. Interact with "Sortable" List
+Opens Sortable from the menu.
+
+Verifies all sortable list items are present (One through Six).
+
+Clicks a few list items to simulate interaction.
+
+Verifies that each item is visible before and after clicks.
+
+7. Interact with "Selectable"
+Navigates to Selectable.
+
+Asserts visibility of selectable items such as:
+
+Cras justo odio, Dapibus ac facilisis in, etc.
+
+8. Navigate to "Elements" and Validate Subsections
+Opens the Elements section.
+
+Verifies that all related menu items are visible, including:
+
+Text Box, Check Box, Radio Button, Web Tables, etc.
+
+9. Interact with "Text Box"
+Navigates to Text Box.
+
+Verifies that the form with Full Name, Email, Current Address, Permanent Address, and Submit is present.
+
+10. Interact with "Check Box"
+Opens the Check Box section.
+
+Verifies visibility of the “Home” checkbox node.
+
+11. Interact with "Radio Button"
+Navigates to Radio Button section.
+
+Clicks on the text "Do you like the site?".
+
+Selects "Yes" radio button and verifies confirmation message.
+
+Selects "Impressive" radio button and verifies updated confirmation.
