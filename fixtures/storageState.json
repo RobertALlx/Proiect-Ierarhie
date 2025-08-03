@@ -1,0 +1,22 @@
+{
+  "cookies": [],
+  "origins": [
+    {
+      "origin": "https://reqres.in",
+      "localStorage": [
+        {
+          "name": "authToken",
+          "value": "placeholder-token"
+        },
+        {
+          "name": "userEmail",
+          "value": "eve.holt@reqres.in"
+        },
+        {
+          "name": "loginTime",
+          "value": "2025-07-31T11:20:00.000Z"
+        }
+      ]
+    }
+  ]
+}
